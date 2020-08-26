@@ -503,6 +503,16 @@ class PagewiseLoadController<T> extends ChangeNotifier {
     this._error = null;
     this.notifyListeners();
   }
+
+  void updateIndex(T value, int index) {
+    _loadedItems[index] = value;
+    notifyListeners();
+  }
+
+  void removeAtIndex(int index) {
+    _loadedItems.removeAt(index);
+    notifyListeners();
+  }
 }
 
 class PagewiseListView<T> extends Pagewise<T> {
