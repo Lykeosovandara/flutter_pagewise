@@ -513,6 +513,11 @@ class PagewiseLoadController<T> extends ChangeNotifier {
     _loadedItems.removeAt(index);
     notifyListeners();
   }
+
+  void addValue(T value) {
+    _loadedItems.add(value);
+    notifyListeners();
+  }
 }
 
 class PagewiseListView<T> extends Pagewise<T> {
