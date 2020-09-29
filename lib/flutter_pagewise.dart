@@ -515,7 +515,7 @@ class PagewiseLoadController<T> extends ChangeNotifier {
   }
 
   void addValue(T value) {
-    _loadedItems.add(value);
+    _loadedItems.insert(_loadedItems.length, value);
     notifyListeners();
   }
 }
